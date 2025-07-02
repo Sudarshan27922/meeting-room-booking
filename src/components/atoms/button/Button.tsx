@@ -1,7 +1,7 @@
 // components/atoms/CommonButton/CommonButton.tsx
 import React from 'react';
 import { Button, CircularProgress } from '@mui/material';
-import type { CommonButtonProps } from './CommonButton.types';
+import type { CommonButtonProps } from './Button.types';
 
 const CommonButton: React.FC<CommonButtonProps> = ({
     children,
@@ -30,7 +30,7 @@ const CommonButton: React.FC<CommonButtonProps> = ({
                 fontWeight: 'bold',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                    transform: 'translateY(-1px)',
+                    transform: 'translateY(-2px)',
                     boxShadow: 6,
                 },
                 ...sx,

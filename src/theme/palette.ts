@@ -10,7 +10,7 @@ const Palette: PaletteOptions = {
         contrastText: '#ffffff',
     },
     secondary: {
-        main: '#0d56df', //blue
+        main: '#0a1552', //blue
         contrastText: '#ffffff',
     },
     text: {

@@ -11,13 +11,13 @@ const MainLayout = () => (
         }}
     >
 
-        <Header />
+        {/* <Header /> */}
 
         <Box component="main" sx={{ flexGrow: 1 }}>
             <Outlet />
         </Box>
 
-        <Footer />
+        {/* <Footer /> */}
     </Box>
 );
 

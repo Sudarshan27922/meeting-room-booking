@@ -6,7 +6,7 @@ const theme = createTheme({
   palette,
   shadows,
   shape: {
-    borderRadius: 15,
+    borderRadius: 10,
   },
 });
 
