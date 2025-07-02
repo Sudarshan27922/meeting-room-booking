@@ -4,31 +4,32 @@ import LoginPage from '../components/pages/LoginPage';
 import PrivateRoute from './PrivateRoutes';
 import HomePage from '../components/pages/HomePage';
 import AdminRoute from './AdminRoutes';
+import BlankLayout from '../layout/BlankLayout';
 
 const AppRoutes = () => (
   <Routes>
-    <Route element={<MainLayout />}>
 
-      {/* Public route */}
-      <Route path="/login" element={<LoginPage />} />
+    {/* Public route */}
+    <Route element={<BlankLayout />}>
+      <Route path="/" element={<LoginPage />} />
+    </Route>
 
-      {/* Protected routes */}
-      <Route element={<PrivateRoute />}>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
+    {/* Protected routes */}
+    <Route element={<PrivateRoute />}>
+      <Route element={<MainLayout />}>
+        <Route path="/home" element={<HomePage />} />
 
-        </Route>
       </Route>
+    </Route>
 
-      {/* Admin-only Route */}
-      {/* <Route element={<AdminRoute />}>
+    {/* Admin-only Route */}
+    {/* <Route element={<AdminRoute />}>
         <Route path="/admin" element={<AdminDashboard />} />
       </Route> */}
 
-      {/* Catch-all: redirect unknown routes to login or home */}
-      <Route path="*" element={<Navigate to="/" replace />} />
+    {/* Catch-all: redirect unknown routes to login or home */}
+    <Route path="*" element={<Navigate to="/" replace />} />
 
-    </Route>
   </Routes>
 );
 

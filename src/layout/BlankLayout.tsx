@@ -1,9 +1,7 @@
 import { Box } from "@mui/material"
 import { Outlet } from 'react-router-dom';
-import Header from "../components/organisms/HeaderBAr";
 
-
-const MainLayout = () => (
+const BlankLayout = () => (
     <Box
         sx={{
             display: 'flex',
@@ -11,15 +9,10 @@ const MainLayout = () => (
             minHeight: '100vh',
         }}
     >
-
-        <Header />
-
         <Box component="main" sx={{ flexGrow: 1 }}>
             <Outlet />
         </Box>
-
-        {/* <Footer /> */}
     </Box>
 );
 
-export default MainLayout
+export default BlankLayout

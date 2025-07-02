@@ -1,0 +1,54 @@
+import React from 'react';
+import { AppBar, Toolbar } from '@mui/material';
+import { useNavigate } from 'react-router-dom'
+import Image from '../atoms/image';
+import Box from '../atoms/box';
+import Typography from '../atoms/typography';
+import NavigationMenu from '../molecules/NavigationMenu';
+import ProfileAvatarWithMenu from '../molecules/ProfileAvatarWithMenu';
+import Logo from '../../assets/images/login page logo.png';
+
+const HeaderBar: React.FC = () => {
+
+    const navigate = useNavigate();
+
+    const handleLogoClick = () => {
+        navigate('/home');
+    };
+
+    return (
+        <AppBar position="static" color="default" elevation={1}>
+            <Toolbar sx={{ justifyContent: 'space-between' }}>
+
+                <Box
+                    onClick={handleLogoClick}
+                    sx={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        gap: 0,
+                        cursor: 'pointer'
+                    }}
+                >
+                    <Image
+                        src={Logo}
+                        alt="Mitrai Logo"
+                        width={40}
+                        height={35}
+                        borderRadius={0.5}
+                        boxShadow={0}
+                        sx={{ objectFit: 'contain', marginRight: 3 }}
+                    />
+                    <Typography variant="h4" fontWeight="bold" color='primary'>
+                        Mitra Connect
+                    </Typography>
+                </Box>
+
+                <NavigationMenu />
+                <ProfileAvatarWithMenu />
+
+            </Toolbar>
+        </AppBar>
+    );
+};
+
+export default HeaderBar;
