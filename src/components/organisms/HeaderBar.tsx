@@ -17,7 +17,7 @@ const HeaderBar: React.FC = () => {
     };
 
     return (
-        <AppBar position="static" color="default" elevation={1}>
+        <AppBar position="sticky" color="default" elevation={1}>
             <Toolbar sx={{ justifyContent: 'space-between' }}>
 
                 <Box

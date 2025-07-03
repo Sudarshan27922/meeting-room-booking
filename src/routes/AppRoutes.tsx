@@ -5,6 +5,7 @@ import PrivateRoute from './PrivateRoutes';
 import HomePage from '../components/pages/HomePage';
 import AdminRoute from './AdminRoutes';
 import BlankLayout from '../layout/BlankLayout';
+import DashboardPage from '../components/pages/DashboardPage';
 
 const AppRoutes = () => (
   <Routes>
@@ -18,7 +19,7 @@ const AppRoutes = () => (
     <Route element={<PrivateRoute />}>
       <Route element={<MainLayout />}>
         <Route path="/home" element={<HomePage />} />
-
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Route>
     </Route>
 

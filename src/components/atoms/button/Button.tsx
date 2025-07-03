@@ -1,4 +1,3 @@
-// components/atoms/CommonButton/CommonButton.tsx
 import React from 'react';
 import { Button, CircularProgress } from '@mui/material';
 import type { CommonButtonProps } from './Button.types';
