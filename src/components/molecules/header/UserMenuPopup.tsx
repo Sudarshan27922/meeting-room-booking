@@ -1,16 +1,16 @@
-import React from 'react';
 import {
   Avatar,
   Button,
-  Stack,
-  Popper,
   ClickAwayListener,
+  Popper,
+  Stack,
 } from '@mui/material';
-import { useAuth } from '../../../context/AuthContext';
-import Paper from '../../atoms/paper';
-import Box from '../../atoms/box';
-import Typography from '../../atoms/typography';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
+import Box from '../../atoms/box';
+import Paper from '../../atoms/paper';
+import Typography from '../../atoms/typography';
 
 interface UserMenuPopupProps {
   anchorEl: HTMLElement | null;
@@ -24,7 +24,7 @@ const UserMenuPopup: React.FC<UserMenuPopupProps> = ({ anchorEl, open, onClose }
 
   const handleProfileClick = () => {
     onClose();
-    navigate('/profile', { state: { user } });
+    navigate('/profile');
   };
 
   return (

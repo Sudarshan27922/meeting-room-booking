@@ -1,8 +1,8 @@
 import { CalendarToday } from "@mui/icons-material";
 import { Paper, Typography } from "@mui/material";
 import { DateCalendar, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import type { Dayjs } from "dayjs";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 interface CalendarMoleculeProps {
   selectedDate: Dayjs;
@@ -30,7 +30,7 @@ const CalendarMolecule: React.FC<CalendarMoleculeProps> = ({ selectedDate, onDat
           value={selectedDate}
           onChange={(newDate) => {
             if (newDate) {
-              // Ensure newDate is a Dayjs instance
+
               const dayjsDate = (typeof (newDate as any).isValid === 'function') ? newDate as Dayjs : undefined;
               if (dayjsDate) {
                 onDateChange(dayjsDate);

@@ -1,7 +1,7 @@
-import React from 'react';
 import { CssBaseline } from '@mui/material';
-import Box from '../atoms/box';
+import React from 'react';
 import BgImage from '../../assets/images/login page bg.png';
+import Box from '../atoms/box';
 
 interface AuthLayoutProps {
     children: React.ReactNode;

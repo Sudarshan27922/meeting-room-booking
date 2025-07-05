@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box } from '@mui/material';
+import React from 'react';
 import TimeLabel from '../../atoms/bookingPage/TimeLabel';
 import TimeSlotBox from '../../atoms/bookingPage/TimeSlotBox';
 

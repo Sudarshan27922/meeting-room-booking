@@ -1,5 +1,5 @@
-import React from 'react';
 import { Chip } from '@mui/material';
+import React from 'react';
 import type { RoundedChipProps } from './Chip.types';
 
 const RoundedChip: React.FC<RoundedChipProps> = ({ label, color = 'default', sx }) => (

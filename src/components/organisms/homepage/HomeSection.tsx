@@ -1,8 +1,8 @@
+import type { SxProps, Theme } from '@mui/material';
 import React from 'react';
 import Box from '../../atoms/box';
-import Typography from '../../atoms/typography';
 import Button from '../../atoms/button';
-import type { SxProps, Theme } from '@mui/material';
+import Typography from '../../atoms/typography';
 
 interface HomeSectionProps {
   background: string;
@@ -21,10 +21,10 @@ interface HomeSectionProps {
   subtitleVariant?: 'h5' | 'h6' | 'body1' | 'body2';
   textBoxStyle?: SxProps<Theme>;
   sideImage?: string;
-  sideImagePosition?: 'left' | 'right' | 'top' | 'bottom'; // extended
-  titleTextAlign?: 'left' | 'center' | 'right'; // added
-  subTitleTextAlign?: 'left' | 'center' | 'right'; // added
-  btnColor?: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning'; // updated to match MUI Button color prop
+  sideImagePosition?: 'left' | 'right' | 'top' | 'bottom';
+  titleTextAlign?: 'left' | 'center' | 'right';
+  subTitleTextAlign?: 'left' | 'center' | 'right';
+  btnColor?: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning';
   textAlignItems?: 'flex-start' | 'flex-end'
 }
 

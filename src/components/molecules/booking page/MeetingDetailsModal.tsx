@@ -1,19 +1,19 @@
-import React from 'react';
-import {
-    Modal,
-    Paper,
-    Typography,
-    IconButton,
-    Stack,
-    Divider,
-    Box,
-} from '@mui/material';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CloseIcon from '@mui/icons-material/Close';
 import EventIcon from '@mui/icons-material/Event';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PeopleIcon from '@mui/icons-material/People';
-import TitleIcon from '@mui/icons-material/Title';
 import RepeatIcon from '@mui/icons-material/Repeat';
+import TitleIcon from '@mui/icons-material/Title';
+import {
+    Box,
+    Divider,
+    IconButton,
+    Modal,
+    Paper,
+    Stack,
+    Typography,
+} from '@mui/material';
+import React from 'react';
 
 interface MeetingDetailModalProps {
     open: boolean;

@@ -1,8 +1,8 @@
-import React from 'react';
 import { Box, Stack } from '@mui/material';
-import CommonTypography from '../../atoms/typography';
-import RoundedChip from '../../atoms/dashboard/chip';
+import React from 'react';
 import type { MeetingRoom } from '../../../services/roomService';
+import RoundedChip from '../../atoms/dashboard/chip';
+import CommonTypography from '../../atoms/typography';
 
 interface RoomDetailCardProps {
     room: MeetingRoom
@@ -13,7 +13,7 @@ const RoomDetailCard: React.FC<RoomDetailCardProps> = ({ room }) => {
     return (
         <Box
             sx={{
-                minWidth: 260,
+                minWidth: 250,
                 height: '100%',
                 bgcolor: 'background.paper',
                 borderRadius: 2,

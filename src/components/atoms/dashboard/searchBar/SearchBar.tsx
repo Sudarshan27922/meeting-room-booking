@@ -1,7 +1,7 @@
-import React from 'react';
-import { TextField, InputAdornment, IconButton } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
+import SearchIcon from '@mui/icons-material/Search';
+import { IconButton, InputAdornment, TextField } from '@mui/material';
+import React from 'react';
 import type { SearchBarProps } from './SearchBar.types';
 
 

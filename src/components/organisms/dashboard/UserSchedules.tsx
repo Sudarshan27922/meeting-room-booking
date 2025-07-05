@@ -1,35 +1,31 @@
+import { Paper, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { Box, Typography, Stack, Paper } from '@mui/material';
+import type { BookingWithRoom } from '../../../utils/getBookingsByUserId';
 import ScheduleCard from '../../molecules/dashboard/ScheduleCard';
 
-interface ScheduleEvent {
-  id: string;
-  startTime: string;
-  endTime: string;
-  title: string;
-  room: string;
+
+interface UserSchedulesProps {
+  events: BookingWithRoom[];
 }
 
-interface UserScheduleOrganismProps {
-  events: ScheduleEvent[];
-}
-
-const UserSchedules: React.FC<UserScheduleOrganismProps> = ({ events }) => {
+const UserSchedules: React.FC<UserSchedulesProps> = ({ events }) => {
   return (
     <Paper
       elevation={8}
       sx={{
         p: 4,
         borderRadius: 4,
-        maxHeight: 480,
+        maxHeight: 465,
         overflowY: 'auto',
         bgcolor: 'background.paper',
-        transition: 'box-shadow 0.3s ease',
-        '&:hover': {
-          boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
-          maxWidth: '100%',
-          width: '100%',
+        boxShadow: 4,
+        // Hide scrollbar for WebKit browsers (Chrome, Safari)
+        '&::-webkit-scrollbar': {
+          display: 'none',
         },
+        // Hide scrollbar for Firefox
+        scrollbarWidth: 'none', // Firefox
+        msOverflowStyle: 'none', // IE and Edge
       }}
     >
       <Typography variant="h5" sx={{ mb: 3, fontWeight: 700 }}>
@@ -39,11 +35,11 @@ const UserSchedules: React.FC<UserScheduleOrganismProps> = ({ events }) => {
       <Stack spacing={3}>
         {events.map((event) => (
           <ScheduleCard
-            key={event.id}
+            key={event.title + event.startTime}
             title={event.title}
             startTime={event.startTime}
             endTime={event.endTime}
-            room={event.room}
+            room={event.roomName}
           />
         ))}
       </Stack>

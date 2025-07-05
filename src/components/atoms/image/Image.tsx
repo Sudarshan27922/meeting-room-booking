@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box } from '@mui/material';
+import React from 'react';
 import type { CommonImageProps } from './Image.types';
 
 const CommonImage: React.FC<CommonImageProps> = ({

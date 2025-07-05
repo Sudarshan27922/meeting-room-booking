@@ -1,12 +1,11 @@
+import { Box, Typography } from '@mui/material';
 import React from 'react';
-import { Typography, Box } from '@mui/material';
 import { useAuth } from '../../context/AuthContext';
 import UserProfileTemplate from '../templates/UserProfileTemplate';
 
 const UserProfilePage: React.FC = () => {
   const { user } = useAuth();
 
-  console.log(user)
 
   if (!user) {
     return (

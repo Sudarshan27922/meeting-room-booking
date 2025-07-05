@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Box, Typography, Stack } from '@mui/material';
-import TimeSlotBox from '../../atoms/bookingPage/TimeSlotBox';
-import type { Booking } from '../../../services/roomService';
+import { Box, Stack, Typography } from '@mui/material';
 import dayjs, { Dayjs } from 'dayjs';
+import React, { useState } from 'react';
+import type { Booking } from '../../../services/roomService';
+import TimeSlotBox from '../../atoms/bookingPage/TimeSlotBox';
 import MeetingDetailModal from '../../molecules/booking page/MeetingDetailsModal';
 
 interface TimeSlotGridProps {

@@ -1,5 +1,5 @@
-import React from 'react';
 import { Button, CircularProgress } from '@mui/material';
+import React from 'react';
 import type { CommonButtonProps } from './Button.types';
 
 const CommonButton: React.FC<CommonButtonProps> = ({

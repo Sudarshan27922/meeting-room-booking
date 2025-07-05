@@ -1,13 +1,12 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
-import MainLayout from '../layout/MainLayout'
-import LoginPage from '../components/pages/LoginPage';
-import PrivateRoute from './PrivateRoutes';
-import HomePage from '../components/pages/HomePage';
-import AdminRoute from './AdminRoutes';
-import BlankLayout from '../layout/BlankLayout';
-import DashboardPage from '../components/pages/DashboardPage';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import BookingPage from '../components/pages/BookingPage';
+import DashboardPage from '../components/pages/DashboardPage';
+import HomePage from '../components/pages/HomePage';
+import LoginPage from '../components/pages/LoginPage';
 import ProfilePage from '../components/pages/ProfilePage';
+import BlankLayout from '../layout/BlankLayout';
+import MainLayout from '../layout/MainLayout';
+import PrivateRoute from './PrivateRoutes';
 
 const AppRoutes = () => (
   <Routes>

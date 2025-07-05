@@ -1,12 +1,12 @@
-import React from 'react';
 import { AppBar, Toolbar } from '@mui/material';
-import { useNavigate } from 'react-router-dom'
-import Image from '../../atoms/image';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Logo from '../../../assets/images/login page logo.png';
 import Box from '../../atoms/box';
+import Image from '../../atoms/image';
 import Typography from '../../atoms/typography';
 import NavigationMenu from '../../molecules/header/NavigationMenu';
 import ProfileAvatarWithMenu from '../../molecules/header/ProfileAvatarWithMenu';
-import Logo from '../../../assets/images/login page logo.png';
 
 const HeaderBar: React.FC = () => {
 

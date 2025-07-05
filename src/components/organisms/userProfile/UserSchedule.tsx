@@ -1,20 +1,13 @@
+import { Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
-import { Typography, Grid, Paper } from '@mui/material';
+import type { BookingWithRoom } from '../../../utils/getBookingsByUserId';
 import ScheduleCard from '../../molecules/dashboard/ScheduleCard';
 
-interface ScheduleEvent {
-  id: string;
-  startTime: string;
-  endTime: string;
-  title: string;
-  room: string;
+interface UserSchedulesProps {
+  events: BookingWithRoom[];
 }
 
-interface UserScheduleOrganismProps {
-  events: ScheduleEvent[];
-}
-
-const UserSchedule: React.FC<UserScheduleOrganismProps> = ({ events }) => {
+const UserSchedule: React.FC<UserSchedulesProps> = ({ events }) => {
   return (
     <Paper
       elevation={8}
@@ -33,12 +26,12 @@ const UserSchedule: React.FC<UserScheduleOrganismProps> = ({ events }) => {
 
       <Grid container spacing={3}>
         {events.map((event) => (
-          <Grid item xs={12} sm={6} md={4} key={event.id}>
+          <Grid size={{xs:12, sm:6, md:4}} key={event.title + event.startTime}>
             <ScheduleCard
               title={event.title}
               startTime={event.startTime}
               endTime={event.endTime}
-              room={event.room}
+              room={event.roomName}
             />
           </Grid>
         ))}

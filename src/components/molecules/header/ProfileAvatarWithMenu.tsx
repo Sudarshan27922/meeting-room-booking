@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
 import { Avatar, IconButton } from '@mui/material';
+import React, { useRef, useState } from 'react';
 import UserMenuPopup from './UserMenuPopup';
 
 const ProfileAvatarWithMenu: React.FC = () => {

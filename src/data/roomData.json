@@ -51,6 +51,26 @@
         "endTime": "13:00",
         "isRecurring": false,
         "guests": 5
+      },
+      {
+        "title": "Strategy Session",
+        "userId": "u7",
+        "userName": "George",
+        "date": "2025-07-05",
+        "startTime": "13:00",
+        "endTime": "14:00",
+        "isRecurring": false,
+        "guests": 5
+      },
+      {
+        "title": "Strategy Session",
+        "userId": "u7",
+        "userName": "George",
+        "date": "2025-07-05",
+        "startTime": "14:00",
+        "endTime": "16:00",
+        "isRecurring": false,
+        "guests": 5
       }
     ]
   },

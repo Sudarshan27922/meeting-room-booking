@@ -1,9 +1,9 @@
+import { Alert, Box, Modal, Paper } from '@mui/material';
 import React, { useState } from 'react';
-import { Box, Paper, Modal, Alert } from '@mui/material';
-import CommonTypography from '../../atoms/typography';
-import CommonButton from '../../atoms/button';
-import QuickBookingForm from '../../organisms/quickBooking/QuickBookingForm';
 import type { MeetingRoom } from '../../../services/roomService';
+import CommonButton from '../../atoms/button';
+import CommonTypography from '../../atoms/typography';
+import QuickBookingForm from '../../organisms/quickBooking/QuickBookingForm';
 
 interface DashboardWelcomeProps {
     username: string;

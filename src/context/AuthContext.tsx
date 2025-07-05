@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useMemo } from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export interface AuthUser {
@@ -8,6 +8,7 @@ export interface AuthUser {
     email?: string;
     userName: string;
     position: string;
+    userId: string;
 }
 
 interface AuthContextType {
@@ -38,6 +39,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 email: email,
                 userName: email === 'admin@mitrai.com' ? 'Admin Username' : 'Regular Username',
                 position: email === 'admin@mitrai.com' ? 'Site Admin' : 'Intern - AI',
+                userId: email === 'admin@mitrai.com' ? 'adminId' : 'u7',
             };
 
             setUser(mockResponse);

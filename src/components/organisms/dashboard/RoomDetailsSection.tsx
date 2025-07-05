@@ -1,8 +1,8 @@
+import { Box, ButtonBase, CircularProgress, Grid, Typography } from '@mui/material';
 import React from 'react';
-import { Box, Typography, Grid, ButtonBase, CircularProgress } from '@mui/material';
-import RoomDetailCard from '../../molecules/dashboard/RoomDetailCard';
-import type { MeetingRoom } from '../../../services/roomService';
 import { useNavigate } from 'react-router-dom';
+import type { MeetingRoom } from '../../../services/roomService';
+import RoomDetailCard from '../../molecules/dashboard/RoomDetailCard';
 
 interface RoomDetailsSectionProps {
     rooms: MeetingRoom[]
@@ -55,7 +55,7 @@ const RoomDetailsSection: React.FC<RoomDetailsSectionProps> = ({ rooms }) => {
 
             <Grid container spacing={3}>
                 {rooms.map((room) => (
-                    <Grid item xs={12} sm={6} md={4} key={room.id}>
+                    <Grid size={{xs:12, sm:6,md:4}} key={room.id}>
                         {room.isAvailable ? (
                             <ButtonBase
                                 onClick={() => handleCardClick(room)}

@@ -1,13 +1,12 @@
 import React, { useRef } from 'react';
-import HomeSection from '../organisms/homepage/HomeSection';
+import { useNavigate } from 'react-router-dom';
+import DashboardBg from '../../assets/images/Dashboard bg.png';
+import QuickBookingBg from '../../assets/images/Home bg 2.png';
+import HomeBg from '../../assets/images/Home bg.png';
+import QuickBookingImg from '../../assets/images/quick booking img.png';
 import ScrollProgressBar from '../atoms/scrollProgressBar';
 import AnimatedSection from '../organisms/homepage/AnimatedSection';
-import { useNavigate } from 'react-router-dom';
-
-import HomeBg from '../../assets/images/Home bg.png';
-import QuickBookingBg from '../../assets/images/Home bg 2.png';
-import QuickBookingImg from '../../assets/images/quick booking img.png';
-import DashboardBg from '../../assets/images/Dashboard bg.png';
+import HomeSection from '../organisms/homepage/HomeSection';
 
 const HomeTemplate: React.FC = () => {
     const sectionRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];

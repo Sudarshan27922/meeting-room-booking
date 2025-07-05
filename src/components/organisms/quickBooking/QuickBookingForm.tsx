@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
 import {
-    Box,
-    Stack,
-    FormGroup,
-    FormControlLabel,
-    Checkbox,
     Alert,
+    Box,
+    Checkbox,
     Divider,
+    FormControlLabel,
+    FormGroup,
+    Stack,
 } from '@mui/material';
+import { DatePicker, LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import dayjs, { Dayjs } from 'dayjs';
+import React, { useState } from 'react';
+import CommonButton from '../../atoms/button';
 import CommonInput from '../../atoms/quickBooking/commonInput';
 import CommonSelect from '../../atoms/quickBooking/commonSelect';
-import CommonButton from '../../atoms/button';
 import CommonTypography from '../../atoms/typography';
 import GuestSelector from '../../molecules/quickBooking/GuestSelector';
-import { DatePicker, TimePicker, LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 interface QuickBookingFormProps {
     rooms: {

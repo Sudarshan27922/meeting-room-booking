@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { Box } from '@mui/material';
+import React, { useState } from 'react';
 import SearchContainer from '../../molecules/dashboard/SearchContainer';
 
 const SearchOrganism: React.FC = () => {

@@ -1,10 +1,10 @@
-import { Alert, Box, Button, Grid, IconButton, Modal, Paper, TextField, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
-import dayjs, { Dayjs } from 'dayjs';
-import type { Room } from "../../organisms/booking page/RoomHeader";
 import {
     Close as CloseIcon,
 } from '@mui/icons-material';
+import { Alert, Box, Button, Grid, IconButton, Modal, Paper, TextField, Typography } from "@mui/material";
+import { Dayjs } from 'dayjs';
+import { useEffect, useState } from "react";
+import type { MeetingRoom } from "../../../services/roomService";
 
 export interface BookingFormData {
     title: string;
@@ -14,14 +14,13 @@ export interface BookingFormData {
     notes: string;
 }
 
-
 const BookingFormModal: React.FC<{
     open: boolean;
     onClose: () => void;
     onSubmit: (formData: BookingFormData) => void;
     selectedHour: number | null;
     selectedDate: Dayjs;
-    room: Room;
+    room: MeetingRoom;
 }> = ({ open, onClose, onSubmit, selectedHour, selectedDate, room }) => {
     const [formData, setFormData] = useState<BookingFormData>({
         title: '',
@@ -108,7 +107,7 @@ const BookingFormModal: React.FC<{
 
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12}>
+                        <Grid size={{xs:12}}>
                             <TextField
                                 fullWidth
                                 label="Event Title"
@@ -120,7 +119,7 @@ const BookingFormModal: React.FC<{
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid size={{xs:12}}>
                             <TextField
                                 fullWidth
                                 label="Booked By"
@@ -132,7 +131,7 @@ const BookingFormModal: React.FC<{
                             />
                         </Grid>
 
-                        <Grid item xs={6}>
+                        <Grid size={{xs:6}}>
                             <TextField
                                 fullWidth
                                 label="Start Time"
@@ -146,7 +145,7 @@ const BookingFormModal: React.FC<{
                             />
                         </Grid>
 
-                        <Grid item xs={6}>
+                        <Grid size={{xs:6}}>
                             <TextField
                                 fullWidth
                                 label="End Time"
@@ -160,7 +159,7 @@ const BookingFormModal: React.FC<{
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid size={{xs:12}}>
                             <TextField
                                 fullWidth
                                 label="Notes (Optional)"
@@ -171,7 +170,7 @@ const BookingFormModal: React.FC<{
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid size={{xs:12}}>
                             <Box sx={{ display: 'flex', gap: 2, justifyContent: 'flex-end' }}>
                                 <Button variant="outlined" onClick={onClose}>
                                     Cancel

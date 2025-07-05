@@ -1,63 +1,24 @@
+import { Grid } from '@mui/material';
 import React from 'react';
-import type { MeetingRoom } from '../../services/roomService';
-import TopOrganism from '../organisms/dashboard/TopOrganism';
+import { useAuth } from '../../context/AuthContext';
+import { useRooms } from '../../hooks/useRooms';
+import { getBookingsByUserId } from '../../utils/getBookingsByUserId';
+import AdminStats from '../organisms/dashboard/AdminStats';
+import RoomDetailsSection from '../organisms/dashboard/RoomDetailsSection';
 import RoomStatsSection from '../organisms/dashboard/RoomStatsSection';
 import SearchOrganism from '../organisms/dashboard/SearchOrganism';
-import RoomDetailsSection from '../organisms/dashboard/RoomDetailsSection';
-import { Grid } from '@mui/material';
+import TopOrganism from '../organisms/dashboard/TopOrganism';
 import UserSchedules from '../organisms/dashboard/UserSchedules';
-import type { AuthUser } from '../../context/AuthContext';
-import AdminStats from '../organisms/dashboard/AdminStats';
 
-interface DashboardTemplateProps {
-  rooms: MeetingRoom[];
-  user: AuthUser;
-  stats: {
-    total: number;
-    available: number;
-    occupied: number;
-  };
-}
 
-const todayEvents = [
-  {
-    id: '1',
-    startTime: '09:00 AM',
-    endTime: '09:30 AM',
-    title: 'Team Standup',
-    room: 'Conference Room A',
-  },
-  {
-    id: '2',
-    startTime: '10:30 AM',
-    endTime: '11:00 AM',
-    title: 'Project Meeting',
-    room: 'Meeting Room B',
-  },
-  {
-    id: '3',
-    startTime: '01:00 PM',
-    endTime: '02:00 PM',
-    title: 'Lunch with Client',
-    room: 'Cafeteria',
-  },
-  {
-    id: '4',
-    startTime: '03:00 PM',
-    endTime: '04:00 PM',
-    title: 'Design Review',
-    room: 'Board Room C',
-  },
-  {
-    id: '5',
-    startTime: '04:30 PM',
-    endTime: '05:00 PM',
-    title: 'Wrap Up',
-    room: 'Focus Room F',
-  },
-];
+const DashboardTemplate: React.FC = () => {
 
-const DashboardTemplate: React.FC<DashboardTemplateProps> = ({ rooms, user, stats }) => {
+  const { rooms, stats } = useRooms();
+  const { user } = useAuth();
+  const userBookings = user?.userId ? getBookingsByUserId(rooms, user.userId) : [];
+
+  if (!user) return null;
+
   return (
     <div>
       <TopOrganism username={user.name} rooms={rooms} />
@@ -73,15 +34,19 @@ const DashboardTemplate: React.FC<DashboardTemplateProps> = ({ rooms, user, stat
             freeSoon={2}
           />
         </Grid>
-        <Grid size={{ xs: 6, md: 8.2 }}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <RoomDetailsSection rooms={rooms} />
         </Grid>
-        <Grid size={{ xs: 6, md: 3.8 }}>
-          <UserSchedules events={todayEvents} />
-        </Grid>
+        {userBookings.length > 0 && (
+          <Grid size={{xs: 12, md:4}}>
+            <UserSchedules events={userBookings} />
+          </Grid>
+        )}
       </Grid>
-
-
+      
+        <Grid sx={{ margin: '20px 0', padding: '0 20px' }}>
+          <AdminStats rooms={rooms} />
+        </Grid>
     </div>
   );
 };

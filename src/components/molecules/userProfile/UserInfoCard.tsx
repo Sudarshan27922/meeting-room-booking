@@ -1,8 +1,8 @@
-import React from 'react';
-import { Box, Typography, Avatar, Stack, Paper } from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
 import BadgeIcon from '@mui/icons-material/Badge';
+import EmailIcon from '@mui/icons-material/Email';
+import PersonIcon from '@mui/icons-material/Person';
+import { Avatar, Box, Paper, Stack, Typography } from '@mui/material';
+import React from 'react';
 import type { AuthUser } from '../../../context/AuthContext';
 
 interface UserInfoCardProps {

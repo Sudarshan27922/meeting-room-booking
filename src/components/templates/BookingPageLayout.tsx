@@ -1,15 +1,14 @@
-import { useLocation } from 'react-router-dom';
-import React, { useState } from 'react';
+import { Alert, Grid, Modal, Paper } from '@mui/material';
 import Box from '@mui/material/Box';
-import { Alert, Grid, Paper } from '@mui/material';
-import RoomHeader from '../organisms/booking page/RoomHeader';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import type { Booking, MeetingRoom } from '../../services/roomService';
 import CalendarMolecule from '../organisms/booking page/CalendarOrganism';
+import RoomHeader from '../organisms/booking page/RoomHeader';
 import TimeSlotGrid from '../organisms/booking page/TimeSlotGrid';
 import QuickBookingForm from '../organisms/quickBooking/QuickBookingForm';
-import { Modal } from '@mui/material';
-import type { Booking, MeetingRoom } from '../../services/roomService';
 
 
 const BookingPage: React.FC = () => {
@@ -92,13 +91,13 @@ const BookingPage: React.FC = () => {
             </Modal>
 
             <Grid container spacing={3}>
-                <Grid item xs={12} md={4}>
+                <Grid size={{xs:12, md:4}}>
                     <CalendarMolecule
                         selectedDate={selectedDate}
                         onDateChange={setSelectedDate}
                     />
                 </Grid>
-                <Grid item xs={12} md={8}>
+                <Grid size={{xs:12, md:8}}>
                     <TimeSlotGrid
                         roomName={room.name}
                         bookings={bookings}

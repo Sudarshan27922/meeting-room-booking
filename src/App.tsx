@@ -1,8 +1,9 @@
-import theme from './theme';
-import Routes from "./routes";
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider, CssBaseline } from '@mui/material';
 import { AuthProvider } from './context/AuthContext';
+import { RoomProvider } from './context/RoomContext';
+import Routes from "./routes";
+import theme from './theme';
 
 const App: React.FC = () => (
 
@@ -10,7 +11,9 @@ const App: React.FC = () => (
     <CssBaseline />
     <BrowserRouter>
       <AuthProvider>
-        <Routes />
+        <RoomProvider>
+          <Routes />
+        </RoomProvider>
       </AuthProvider>
     </BrowserRouter>
   </ThemeProvider >

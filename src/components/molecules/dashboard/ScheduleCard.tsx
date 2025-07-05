@@ -1,5 +1,5 @@
+import { Divider, Paper } from '@mui/material';
 import React from 'react';
-import { Paper, Divider } from '@mui/material';
 import CommonTypography from '../../atoms/typography';
 
 interface ScheduleCardProps {
