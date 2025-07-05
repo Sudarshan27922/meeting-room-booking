@@ -1,6 +1,6 @@
 import React from 'react';
-import Box from '../atoms/box';
-import LoginCard from '../molecules/LoginCard';
+import Box from '../../atoms/box';
+import LoginCard from '../../molecules/loginPage/LoginCard';
 
 interface LoginSectionProps {
   onLogin: () => void;

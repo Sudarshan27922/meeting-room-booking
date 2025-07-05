@@ -1,0 +1,301 @@
+[
+  {
+    "id": "room-1",
+    "name": "Innovation Hub",
+    "location": "4th Floor",
+    "capacity": 9,
+    "amenities": [
+      "table",
+      "tv",
+      "projector"
+    ],
+    "ac": true,
+    "isAvailable": true,
+    "bookings": [
+      {
+        "title": "Project Sync-Up",
+        "userId": "u4",
+        "userName": "Diana",
+        "date": "2025-07-04",
+        "startTime": "10:00",
+        "endTime": "11:00",
+        "isRecurring": false
+      },
+      {
+        "title": "Weekly Check-in",
+        "userId": "u3",
+        "userName": "Charlie",
+        "date": "2025-07-02",
+        "startTime": "15:00",
+        "endTime": "16:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Team Huddle",
+        "userId": "u8",
+        "userName": "Hannah",
+        "date": "2025-07-06",
+        "startTime": "09:00",
+        "endTime": "10:00",
+        "isRecurring": false
+      },
+      {
+        "title": "Strategy Session",
+        "userId": "u7",
+        "userName": "George",
+        "date": "2025-07-05",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "isRecurring": false
+      }
+    ]
+  },
+  {
+    "id": "room-2",
+    "name": "Strategy Chamber",
+    "location": "1st Floor",
+    "capacity": 6,
+    "amenities": [
+      "table",
+      "tv"
+    ],
+    "ac": false,
+    "isAvailable": false,
+    "bookings": [
+      {
+        "title": "Brainstorming Call",
+        "userId": "u3",
+        "userName": "Charlie",
+        "date": "2025-07-03",
+        "startTime": "13:00",
+        "endTime": "14:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Client Discussion",
+        "userId": "u6",
+        "userName": "Fiona",
+        "date": "2025-07-03",
+        "startTime": "14:00",
+        "endTime": "15:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Internal Review",
+        "userId": "u2",
+        "userName": "Bob",
+        "date": "2025-07-06",
+        "startTime": "10:00",
+        "endTime": "11:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Department Meeting",
+        "userId": "u8",
+        "userName": "Hannah",
+        "date": "2025-07-03",
+        "startTime": "10:00",
+        "endTime": "11:00",
+        "isRecurring": true
+      }
+    ]
+  },
+  {
+    "id": "room-3",
+    "name": "Vision Room",
+    "location": "2nd Floor",
+    "capacity": 11,
+    "amenities": [
+      "table",
+      "projector"
+    ],
+    "ac": true,
+    "isAvailable": true,
+    "bookings": [
+      {
+        "title": "Q3 Planning Session",
+        "userId": "u3",
+        "userName": "Charlie",
+        "date": "2025-07-04",
+        "startTime": "09:00",
+        "endTime": "10:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Product Development Update",
+        "userId": "u1",
+        "userName": "Alice",
+        "date": "2025-07-02",
+        "startTime": "13:00",
+        "endTime": "14:00",
+        "isRecurring": false
+      },
+      {
+        "title": "Feature Brainstorm",
+        "userId": "u4",
+        "userName": "Diana",
+        "date": "2025-07-03",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "isRecurring": false
+      },
+      {
+        "title": "Roadmap Discussion",
+        "userId": "u8",
+        "userName": "Hannah",
+        "date": "2025-07-04",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "isRecurring": false
+      }
+    ]
+  },
+  {
+    "id": "room-4",
+    "name": "Connect Space",
+    "location": "4th Floor",
+    "capacity": 5,
+    "amenities": [
+      "tv"
+    ],
+    "ac": false,
+    "isAvailable": true,
+    "bookings": [
+      {
+        "title": "Sprint Planning",
+        "userId": "u7",
+        "userName": "George",
+        "date": "2025-07-04",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "isRecurring": false
+      },
+      {
+        "title": "Daily Stand-up",
+        "userId": "u7",
+        "userName": "George",
+        "date": "2025-07-03",
+        "startTime": "14:00",
+        "endTime": "15:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Review & Retrospective",
+        "userId": "u1",
+        "userName": "Alice",
+        "date": "2025-07-03",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "isRecurring": false
+      },
+      {
+        "title": "Budget Review",
+        "userId": "u6",
+        "userName": "Fiona",
+        "date": "2025-07-03",
+        "startTime": "14:00",
+        "endTime": "15:00",
+        "isRecurring": true
+      }
+    ]
+  },
+  {
+    "id": "room-5",
+    "name": "Nexus Hall",
+    "location": "2nd Floor",
+    "capacity": 9,
+    "amenities": [
+      "table"
+    ],
+    "ac": true,
+    "isAvailable": false,
+    "bookings": [
+      {
+        "title": "HR Policy Discussion",
+        "userId": "u5",
+        "userName": "Ethan",
+        "date": "2025-07-03",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "isRecurring": false
+      },
+      {
+        "title": "Marketing Campaign Review",
+        "userId": "u7",
+        "userName": "George",
+        "date": "2025-07-04",
+        "startTime": "09:00",
+        "endTime": "10:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Sales Performance Review",
+        "userId": "u9",
+        "userName": "Ivan",
+        "date": "2025-07-02",
+        "startTime": "10:00",
+        "endTime": "11:00",
+        "isRecurring": true
+      },
+      {
+        "title": "IT Infrastructure Planning",
+        "userId": "u5",
+        "userName": "Ethan",
+        "date": "2025-07-05",
+        "startTime": "09:00",
+        "endTime": "10:00",
+        "isRecurring": false
+      }
+    ]
+  },
+  {
+    "id": "room-6",
+    "name": "Collab Zone",
+    "location": "4th Floor",
+    "capacity": 10,
+    "amenities": [
+      "table",
+      "tv"
+    ],
+    "ac": false,
+    "isAvailable": true,
+    "bookings": [
+      {
+        "title": "New Hire Onboarding",
+        "userId": "u8",
+        "userName": "Hannah",
+        "date": "2025-07-02",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Legal & Compliance Update",
+        "userId": "u10",
+        "userName": "Jasmine",
+        "date": "2025-07-04",
+        "startTime": "13:00",
+        "endTime": "14:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Cross-Functional Sync",
+        "userId": "u1",
+        "userName": "Alice",
+        "date": "2025-07-03",
+        "startTime": "09:00",
+        "endTime": "10:00",
+        "isRecurring": true
+      },
+      {
+        "title": "Leadership Team Meeting",
+        "userId": "u6",
+        "userName": "Fiona",
+        "date": "2025-07-02",
+        "startTime": "09:00",
+        "endTime": "10:00",
+        "isRecurring": true
+      }
+    ]
+  }
+]

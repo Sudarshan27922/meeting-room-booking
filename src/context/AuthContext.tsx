@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface AuthUser {
+export interface AuthUser {
     name: string;
     role: 'admin' | 'user';
     token: string;

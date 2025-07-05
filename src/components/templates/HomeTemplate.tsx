@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import HomeSection from '../organisms/HomeSection';
+import HomeSection from '../organisms/homepage/HomeSection';
 import ScrollProgressBar from '../atoms/scrollProgressBar';
-import AnimatedSection from '../organisms/AnimatedSection';
+import AnimatedSection from '../organisms/homepage/AnimatedSection';
 import { useNavigate } from 'react-router-dom';
 
 import HomeBg from '../../assets/images/Home bg.png';

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material"
 import { Outlet } from 'react-router-dom';
-import Header from "../components/organisms/HeaderBAr";
+import Header from "../components/organisms/header/HeaderBar";
 
 
 const MainLayout = () => (

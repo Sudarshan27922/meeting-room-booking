@@ -1,10 +1,10 @@
 import React from 'react';
-import Paper from '../atoms/paper';
-import Typography from '../atoms/typography';
-import Button from '../atoms/button';
-import Box from '../atoms/box';
-import Image from '../atoms/image';
-import Logo from '../../assets/images/login page logo.png';
+import Paper from '../../atoms/paper';
+import Typography from '../../atoms/typography';
+import Button from '../../atoms/button';
+import Box from '../../atoms/box';
+import Image from '../../atoms/image';
+import Logo from '../../../assets/images/login page logo.png';
 
 interface LoginCardProps {
     onLogin: () => void;

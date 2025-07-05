@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Typography, Tooltip } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Box, Tooltip } from '@mui/material';
 
 const sectionLabels = [
   { label: 'Home', percent: 0 },

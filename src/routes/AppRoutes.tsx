@@ -6,6 +6,8 @@ import HomePage from '../components/pages/HomePage';
 import AdminRoute from './AdminRoutes';
 import BlankLayout from '../layout/BlankLayout';
 import DashboardPage from '../components/pages/DashboardPage';
+import BookingPage from '../components/pages/BookingPage';
+import ProfilePage from '../components/pages/ProfilePage';
 
 const AppRoutes = () => (
   <Routes>
@@ -20,6 +22,9 @@ const AppRoutes = () => (
       <Route element={<MainLayout />}>
         <Route path="/home" element={<HomePage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/booking" element={<BookingPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        {/* Add more protected routes here */}
       </Route>
     </Route>
 

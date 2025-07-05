@@ -6,10 +6,11 @@ import {
   Popper,
   ClickAwayListener,
 } from '@mui/material';
-import { useAuth } from '../../context/AuthContext';
-import Paper from '../atoms/paper';
-import Box from '../atoms/box';
-import Typography from '../atoms/typography';
+import { useAuth } from '../../../context/AuthContext';
+import Paper from '../../atoms/paper';
+import Box from '../../atoms/box';
+import Typography from '../../atoms/typography';
+import { useNavigate } from 'react-router-dom';
 
 interface UserMenuPopupProps {
   anchorEl: HTMLElement | null;
@@ -19,6 +20,12 @@ interface UserMenuPopupProps {
 
 const UserMenuPopup: React.FC<UserMenuPopupProps> = ({ anchorEl, open, onClose }) => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    onClose();
+    navigate('/profile', { state: { user } });
+  };
 
   return (
     <Popper
@@ -60,7 +67,7 @@ const UserMenuPopup: React.FC<UserMenuPopupProps> = ({ anchorEl, open, onClose }
               <Button
                 variant="outlined"
                 size="small"
-                onClick={onClose}
+                onClick={handleProfileClick}
                 sx={{ borderRadius: 2 }}
               >
                 Profile

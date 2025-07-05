@@ -3,7 +3,7 @@ import type { PaletteOptions } from "@mui/material";
 const Palette: PaletteOptions = {
     mode: 'light',
     background: {
-        default: '#ffffff',
+        default: '#e0e0e0',
     },
     primary: {
         main: '#fa5c1d', //orange

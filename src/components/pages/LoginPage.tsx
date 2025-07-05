@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthLayout from '../templates/AuthLayout';
-import LoginSection from '../organisms/LoginSection';
+import LoginSection from '../organisms/loginPage/LoginSection';
 import { useAuth } from '../../context/AuthContext';
 
 const LoginPage: React.FC = () => {

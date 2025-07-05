@@ -1,7 +1,7 @@
 import React from 'react';
-import Box from '../atoms/box';
-import Typography from '../atoms/typography';
-import Button from '../atoms/button';
+import Box from '../../atoms/box';
+import Typography from '../../atoms/typography';
+import Button from '../../atoms/button';
 import type { SxProps, Theme } from '@mui/material';
 
 interface HomeSectionProps {
