@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
 import {
     Box,
     Stack,
@@ -14,7 +15,7 @@ import CommonButton from '../../atoms/button';
 import CommonTypography from '../../atoms/typography';
 import GuestSelector from '../../molecules/quickBooking/GuestSelector';
 import { DatePicker, TimePicker, LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 interface QuickBookingFormProps {
     rooms: {
@@ -22,7 +23,15 @@ interface QuickBookingFormProps {
         capacity: number;
         amenities: string[];
     }[];
-    onSuccess: () => void;
+    onSuccess: (booking: {
+        title: string;
+        room: string;
+        date: string;
+        startTime: string;
+        endTime: string;
+        isRecurring: boolean;
+        guests: number;
+    }) => void;
     setShowSuccess: (show: boolean) => void;
 }
 
@@ -32,10 +41,11 @@ const QuickBookingForm: React.FC<QuickBookingFormProps> = ({ rooms, onSuccess, s
     const [guestCount, setGuestCount] = useState(0);
     const [amenities, setAmenities] = useState<string[]>([]);
     const [booked, setBooked] = useState(false);
-    const [date, setDate] = useState<Date | null>(new Date());
-    const [startTime, setStartTime] = useState<Date | null>(null);
-    const [endTime, setEndTime] = useState<Date | null>(null);
+    const [date, setDate] = useState<Dayjs | null>(dayjs());
+    const [startTime, setStartTime] = useState<Dayjs | null>(null);
+    const [endTime, setEndTime] = useState<Dayjs | null>(null);
     const [isRecurring, setIsRecurring] = useState(false);
+    const [title, setTitle] = useState('');
 
 
     const handleAmenityToggle = (amenity: string) => {
@@ -45,8 +55,25 @@ const QuickBookingForm: React.FC<QuickBookingFormProps> = ({ rooms, onSuccess, s
     };
 
     const handleSubmit = () => {
+        if (!title || !roomName || !date || !startTime || !endTime) {
+            alert('Please fill in all required fields.');
+            return;
+        }
         setBooked(true);
-        onSuccess();
+
+        const newBooking = {
+            title,
+            room: roomName,
+            date: date ? date.format('YYYY-MM-DD') : '',
+            startTime: startTime ? startTime.format('HH:mm') : '',
+            endTime: endTime ? endTime.format('HH:mm') : '',
+            isRecurring,
+            guests: guestCount,
+        };
+
+        console.log('Booking data:', newBooking);
+
+        onSuccess(newBooking);
         setShowSuccess(true);
     };
 
@@ -57,7 +84,12 @@ const QuickBookingForm: React.FC<QuickBookingFormProps> = ({ rooms, onSuccess, s
                 width: '100%',
             }}>
             <Stack spacing={1.5}>
-                <CommonInput label="Meeting Title" size="small" />
+                <CommonInput
+                    label="Meeting Title"
+                    size="small"
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                />
                 <CommonSelect
                     label="Select Room"
                     value={roomName}
@@ -69,24 +101,24 @@ const QuickBookingForm: React.FC<QuickBookingFormProps> = ({ rooms, onSuccess, s
                     options={rooms.map((room) => room.name)}
                     size="small"
                 />
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
                         label="Select Date"
                         value={date}
-                        onChange={setDate}
+                        onChange={(newValue) => setDate(newValue ? dayjs(newValue) : null)}
                         slotProps={{ textField: { size: 'small', fullWidth: true } }}
                     />
                     <Stack direction="row" spacing={1}>
                         <TimePicker
                             label="Start Time"
                             value={startTime}
-                            onChange={setStartTime}
+                            onChange={(newValue) => setStartTime(newValue ? dayjs(newValue) : null)}
                             slotProps={{ textField: { size: 'small', fullWidth: true } }}
                         />
                         <TimePicker
                             label="End Time"
                             value={endTime}
-                            onChange={setEndTime}
+                            onChange={(newValue) => setEndTime(newValue ? dayjs(newValue) : null)}
                             slotProps={{ textField: { size: 'small', fullWidth: true } }}
                         />
                     </Stack>

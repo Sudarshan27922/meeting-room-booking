@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, Stack } from '@mui/material';
 import TimeSlotBox from '../../atoms/bookingPage/TimeSlotBox';
 import type { Booking } from '../../../services/roomService';
 import dayjs, { Dayjs } from 'dayjs';
+import MeetingDetailModal from '../../molecules/booking page/MeetingDetailsModal';
 
 interface TimeSlotGridProps {
+  roomName: string;
   bookings: Booking[];
   selectedDate: Dayjs;
   onAddBooking: (event: React.MouseEvent<HTMLElement>, startTime: string) => void;
@@ -12,12 +14,20 @@ interface TimeSlotGridProps {
 
 const hours = Array.from({ length: 9 }, (_, i) => 9 + i); // 9 AM to 6 PM
 
-const TimeSlotGrid: React.FC<TimeSlotGridProps> = ({
-  bookings,
-  selectedDate,
-  onAddBooking,
-}) => {
+const TimeSlotGrid: React.FC<TimeSlotGridProps> = ({ bookings, selectedDate, onAddBooking, roomName }) => {
   const formattedDate = selectedDate.format('YYYY-MM-DD');
+  const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleBookedClick = (booking: Booking) => {
+    setSelectedBooking(booking);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedBooking(null);
+  };
 
   const getBookingAtTime = (hour: number) => {
     const timeStr = hour.toString().padStart(2, '0') + ':00';
@@ -51,12 +61,24 @@ const TimeSlotGrid: React.FC<TimeSlotGridProps> = ({
             <TimeSlotBox
               key={hour}
               isBooked={!!booking}
-              bookingTitle={booking?.title}
-              onClick={(e) => !booking && onAddBooking(e, `${hour.toString().padStart(2, '0')}:00`)}
+              bookingTitle={booking?.title
+              }
+              onClick={(e) =>
+                booking
+                  ? handleBookedClick(booking)
+                  : onAddBooking(e, `${hour.toString().padStart(2, '0')}:00`)
+              }
             />
           );
         })}
       </Stack>
+
+      <MeetingDetailModal
+        roomName={roomName}
+        open={isModalOpen}
+        onClose={handleModalClose}
+        booking={selectedBooking}
+      />
     </Box>
   );
 };

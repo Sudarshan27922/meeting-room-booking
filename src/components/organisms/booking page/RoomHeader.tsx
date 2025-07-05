@@ -1,16 +1,8 @@
 import { LocationOn } from "@mui/icons-material";
 import { Box, Card, CardContent, Chip, Typography } from "@mui/material";
-import type { RoomBooking } from "../../atoms/quickBooking/TimeSlotAtom";
+import type { MeetingRoom } from "../../../services/roomService";
 
-export interface Room {
-    id: string;
-    name: string;
-    capacity: number;
-    location: string;
-    bookings?: RoomBooking[];
-}
-
-const RoomHeader: React.FC<{ room: Room }> = ({ room }) => {
+const RoomHeader: React.FC<{ room: MeetingRoom }> = ({ room }) => {
     return (
         <Card sx={{ mb: 3, borderRadius: 3, background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)' }}>
             <CardContent>

@@ -4,13 +4,13 @@ import { Box, Typography } from '@mui/material';
 interface TimeSlotBoxProps {
   isBooked: boolean;
   bookingTitle?: string;
-  onClick?: () => void;
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 const TimeSlotBox: React.FC<TimeSlotBoxProps> = ({ isBooked, bookingTitle, onClick }) => {
   return (
     <Box
-      onClick={!isBooked ? onClick : undefined}
+      onClick={onClick}
       sx={{
         width: 91,
         height: 313,
@@ -20,7 +20,7 @@ const TimeSlotBox: React.FC<TimeSlotBoxProps> = ({ isBooked, bookingTitle, onCli
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        cursor: isBooked ? 'not-allowed' : 'pointer',
+        cursor: 'pointer',
         transition: 'all 0.3s ease',
         textAlign: 'center',
         p: 1.5,

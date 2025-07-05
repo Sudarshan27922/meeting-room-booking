@@ -8,6 +8,7 @@ export interface Booking {
     startTime: string;
     endTime: string;
     isRecurring: boolean;
+    guests: number;
 }
 
 export interface MeetingRoom {
@@ -37,6 +38,7 @@ export const RoomService = {
                             startTime: booking.startTime,
                             endTime: booking.endTime,
                             isRecurring: booking.isRecurring,
+                            guests: booking.guests,
                         })),
                     }))
                 );

@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import { Alert, Grid, Popper, Paper, ClickAwayListener } from '@mui/material';
+import { Alert, Grid, Paper } from '@mui/material';
 import RoomHeader from '../organisms/booking page/RoomHeader';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
@@ -9,20 +9,43 @@ import CalendarMolecule from '../organisms/booking page/CalendarOrganism';
 import TimeSlotGrid from '../organisms/booking page/TimeSlotGrid';
 import QuickBookingForm from '../organisms/quickBooking/QuickBookingForm';
 import { Modal } from '@mui/material';
+import type { Booking, MeetingRoom } from '../../services/roomService';
 
 
 const BookingPage: React.FC = () => {
     const location = useLocation();
-    const room = location.state?.room;
+    const room = location.state?.room as MeetingRoom;
 
     const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [popupTime, setPopupTime] = useState<string | null>(null);
+    const [bookings, setBookings] = useState<Booking[]>(room?.bookings || []);
+
 
     const handleSlotClick = (event: React.MouseEvent<HTMLElement>, startTime: string) => {
         setAnchorEl(event.currentTarget);
         setPopupTime(startTime);
     };
+
+    const handleBookingSuccess = (newBookingData: {
+        title: string;
+        room: string;
+        date: string;
+        startTime: string;
+        endTime: string;
+        isRecurring: boolean;
+        guests: number;
+    }) => {
+        const enrichedBooking: Booking = {
+            ...newBookingData,
+            userId: 'currentUserId',
+            name: 'Current User',
+        };
+
+        setBookings((prev) => [...prev, enrichedBooking]);
+        handleClosePopup();
+    };
+
 
     const handleClosePopup = () => {
         setAnchorEl(null);
@@ -53,17 +76,16 @@ const BookingPage: React.FC = () => {
             >
                 <Paper
                     sx={{
-                        p: 2,
+                        p: 3,
                         borderRadius: 2,
                         maxWidth: 400,
-                        width: '90%',
                         boxShadow: 5,
                     }}
                     onClick={(e) => e.stopPropagation()}
                 >
                     <QuickBookingForm
                         rooms={[room]}
-                        onSuccess={handleClosePopup}
+                        onSuccess={handleBookingSuccess}
                         setShowSuccess={() => { }}
                     />
                 </Paper>
@@ -78,7 +100,8 @@ const BookingPage: React.FC = () => {
                 </Grid>
                 <Grid item xs={12} md={8}>
                     <TimeSlotGrid
-                        bookings={room.bookings}
+                        roomName={room.name}
+                        bookings={bookings}
                         selectedDate={selectedDate}
                         onAddBooking={handleSlotClick}
                     />

@@ -19,7 +19,8 @@
         "date": "2025-07-04",
         "startTime": "10:00",
         "endTime": "11:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 4
       },
       {
         "title": "Weekly Check-in",
@@ -28,7 +29,8 @@
         "date": "2025-07-02",
         "startTime": "15:00",
         "endTime": "16:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 7
       },
       {
         "title": "Team Huddle",
@@ -37,7 +39,8 @@
         "date": "2025-07-06",
         "startTime": "09:00",
         "endTime": "10:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 2
       },
       {
         "title": "Strategy Session",
@@ -46,7 +49,8 @@
         "date": "2025-07-05",
         "startTime": "12:00",
         "endTime": "13:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 5
       }
     ]
   },
@@ -69,7 +73,8 @@
         "date": "2025-07-03",
         "startTime": "13:00",
         "endTime": "14:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 3
       },
       {
         "title": "Client Discussion",
@@ -78,7 +83,8 @@
         "date": "2025-07-03",
         "startTime": "14:00",
         "endTime": "15:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 6
       },
       {
         "title": "Internal Review",
@@ -87,7 +93,8 @@
         "date": "2025-07-06",
         "startTime": "10:00",
         "endTime": "11:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 5
       },
       {
         "title": "Department Meeting",
@@ -96,7 +103,8 @@
         "date": "2025-07-03",
         "startTime": "10:00",
         "endTime": "11:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 4
       }
     ]
   },
@@ -119,7 +127,8 @@
         "date": "2025-07-04",
         "startTime": "09:00",
         "endTime": "10:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 9
       },
       {
         "title": "Product Development Update",
@@ -128,7 +137,8 @@
         "date": "2025-07-02",
         "startTime": "13:00",
         "endTime": "14:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 6
       },
       {
         "title": "Feature Brainstorm",
@@ -137,7 +147,8 @@
         "date": "2025-07-03",
         "startTime": "11:00",
         "endTime": "12:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 3
       },
       {
         "title": "Roadmap Discussion",
@@ -146,7 +157,8 @@
         "date": "2025-07-04",
         "startTime": "12:00",
         "endTime": "13:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 5
       }
     ]
   },
@@ -168,7 +180,8 @@
         "date": "2025-07-04",
         "startTime": "11:00",
         "endTime": "12:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 4
       },
       {
         "title": "Daily Stand-up",
@@ -177,7 +190,8 @@
         "date": "2025-07-03",
         "startTime": "14:00",
         "endTime": "15:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 3
       },
       {
         "title": "Review & Retrospective",
@@ -186,7 +200,8 @@
         "date": "2025-07-03",
         "startTime": "12:00",
         "endTime": "13:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 5
       },
       {
         "title": "Budget Review",
@@ -195,7 +210,8 @@
         "date": "2025-07-03",
         "startTime": "14:00",
         "endTime": "15:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 2
       }
     ]
   },
@@ -217,7 +233,8 @@
         "date": "2025-07-03",
         "startTime": "12:00",
         "endTime": "13:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 6
       },
       {
         "title": "Marketing Campaign Review",
@@ -226,7 +243,8 @@
         "date": "2025-07-04",
         "startTime": "09:00",
         "endTime": "10:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 8
       },
       {
         "title": "Sales Performance Review",
@@ -235,7 +253,8 @@
         "date": "2025-07-02",
         "startTime": "10:00",
         "endTime": "11:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 5
       },
       {
         "title": "IT Infrastructure Planning",
@@ -244,7 +263,8 @@
         "date": "2025-07-05",
         "startTime": "09:00",
         "endTime": "10:00",
-        "isRecurring": false
+        "isRecurring": false,
+        "guests": 3
       }
     ]
   },
@@ -267,7 +287,8 @@
         "date": "2025-07-02",
         "startTime": "12:00",
         "endTime": "13:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 7
       },
       {
         "title": "Legal & Compliance Update",
@@ -276,7 +297,8 @@
         "date": "2025-07-04",
         "startTime": "13:00",
         "endTime": "14:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 9
       },
       {
         "title": "Cross-Functional Sync",
@@ -285,7 +307,8 @@
         "date": "2025-07-03",
         "startTime": "09:00",
         "endTime": "10:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 10
       },
       {
         "title": "Leadership Team Meeting",
@@ -294,7 +317,8 @@
         "date": "2025-07-02",
         "startTime": "09:00",
         "endTime": "10:00",
-        "isRecurring": true
+        "isRecurring": true,
+        "guests": 5
       }
     ]
   }
