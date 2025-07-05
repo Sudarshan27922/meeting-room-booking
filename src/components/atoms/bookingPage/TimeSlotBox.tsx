@@ -60,6 +60,10 @@ const TimeSlotBox: React.FC<TimeSlotBoxProps> = ({ isBooked, bookingTitle, onCli
           wordBreak: 'break-word',
           letterSpacing: 0.5,
           textTransform: 'capitalize',
+          transform: 'rotate(-90deg)',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
         }}
       >
         {bookingTitle || 'Available'}

@@ -17,13 +17,11 @@ const BookingPage: React.FC = () => {
 
     const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const [popupTime, setPopupTime] = useState<string | null>(null);
     const [bookings, setBookings] = useState<Booking[]>(room?.bookings || []);
 
 
-    const handleSlotClick = (event: React.MouseEvent<HTMLElement>, startTime: string) => {
+    const handleSlotClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
-        setPopupTime(startTime);
     };
 
     const handleBookingSuccess = (newBookingData: {
@@ -48,7 +46,6 @@ const BookingPage: React.FC = () => {
 
     const handleClosePopup = () => {
         setAnchorEl(null);
-        setPopupTime(null);
     };
 
     if (!room) {
@@ -91,13 +88,13 @@ const BookingPage: React.FC = () => {
             </Modal>
 
             <Grid container spacing={3}>
-                <Grid size={{xs:12, md:4}}>
+                <Grid size={{ xs: 12, md: 3.5 }}>
                     <CalendarMolecule
                         selectedDate={selectedDate}
                         onDateChange={setSelectedDate}
                     />
                 </Grid>
-                <Grid size={{xs:12, md:8}}>
+                <Grid size={{ xs: 12, md: 8.5 }}>
                     <TimeSlotGrid
                         roomName={room.name}
                         bookings={bookings}

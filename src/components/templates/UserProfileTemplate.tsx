@@ -36,7 +36,7 @@ const UserProfileTemplate: React.FC<UserProfileTemplateProps> = ({ user }) => {
         </Grid>
         {userBookings.length > 0 && (
           <Grid container justifyContent="center" sx={{ mt: 4 }}>
-            <Grid size={{xs:12, sm:10, md:8}}>
+            <Grid size={{xs:12, sm:8, md:12}}>
               <UserSchedule events={userBookings} />
             </Grid>
           </Grid>
