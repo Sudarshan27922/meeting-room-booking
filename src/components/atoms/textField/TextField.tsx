@@ -1,8 +1,7 @@
 import React from 'react';
-import { TextField } from '@mui/material';
-import type { CommonTextFieldProps } from './TextField.types';
+import { TextField, type TextFieldProps } from '@mui/material';
 
-const CommonTextField: React.FC<CommonTextFieldProps> = ({
+const CommonTextField: React.FC<TextFieldProps> = ({
   variant = 'outlined',
   size = 'medium',
   fullWidth = true,

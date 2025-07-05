@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Stack, Paper } from '@mui/material';
+import { Typography, Grid, Paper } from '@mui/material';
 import ScheduleCard from '../../molecules/dashboard/ScheduleCard';
 
 interface ScheduleEvent {
@@ -14,7 +14,7 @@ interface UserScheduleOrganismProps {
   events: ScheduleEvent[];
 }
 
-const UserSchedules: React.FC<UserScheduleOrganismProps> = ({ events }) => {
+const UserSchedule: React.FC<UserScheduleOrganismProps> = ({ events }) => {
   return (
     <Paper
       elevation={8}
@@ -22,33 +22,29 @@ const UserSchedules: React.FC<UserScheduleOrganismProps> = ({ events }) => {
         p: 4,
         borderRadius: 4,
         maxHeight: 480,
+        width: '100%',
         overflowY: 'auto',
         bgcolor: 'background.paper',
-        transition: 'box-shadow 0.3s ease',
-        '&:hover': {
-          boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
-          maxWidth: '100%',
-          width: '100%',
-        },
       }}
     >
       <Typography variant="h5" sx={{ mb: 3, fontWeight: 700 }}>
         Today's Schedule
       </Typography>
 
-      <Stack spacing={3}>
+      <Grid container spacing={3}>
         {events.map((event) => (
-          <ScheduleCard
-            key={event.id}
-            title={event.title}
-            startTime={event.startTime}
-            endTime={event.endTime}
-            room={event.room}
-          />
+          <Grid item xs={12} sm={6} md={4} key={event.id}>
+            <ScheduleCard
+              title={event.title}
+              startTime={event.startTime}
+              endTime={event.endTime}
+              room={event.room}
+            />
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
     </Paper>
   );
 };
 
-export default UserSchedules;
+export default UserSchedule;

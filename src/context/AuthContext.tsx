@@ -6,6 +6,8 @@ export interface AuthUser {
     role: 'admin' | 'user';
     token: string;
     email?: string;
+    userName: string;
+    position: string;
 }
 
 interface AuthContextType {
@@ -34,6 +36,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 name: email === 'admin@mitrai.com' ? 'Admin User' : 'Regular User',
                 role: email === 'admin@mitrai.com' ? 'admin' : 'user',
                 email: email,
+                userName: email === 'admin@mitrai.com' ? 'Admin Username' : 'Regular Username',
+                position: email === 'admin@mitrai.com' ? 'Site Admin' : 'Intern - AI',
             };
 
             setUser(mockResponse);

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Paper } from '@mui/material';
-import type { CommonPaperProps } from './Paper.types';
+import { Paper, type PaperProps } from '@mui/material';
 
-const CommonPaper: React.FC<CommonPaperProps> = ({
+const CommonPaper: React.FC<PaperProps> = ({
   children,
   elevation = 4,
   sx,

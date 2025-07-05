@@ -1,8 +1,7 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import type { CommonTypographyProps } from './Typography.types';
+import { Typography, type TypographyProps } from '@mui/material';
 
-const CommonTypography: React.FC<CommonTypographyProps> = ({
+const CommonTypography: React.FC<TypographyProps> = ({
   children,
   variant = 'body1',
   fontWeight = 500,

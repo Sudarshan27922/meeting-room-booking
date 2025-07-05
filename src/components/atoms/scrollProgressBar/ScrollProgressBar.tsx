@@ -43,7 +43,7 @@ const ScrollProgressBar = () => {
         zIndex: 9999,
       }}
     >
-      {/* Scroll bar fill */}
+
       <Box
         sx={{
           position: 'absolute',
@@ -57,7 +57,6 @@ const ScrollProgressBar = () => {
         }}
       />
 
-      {/* Checkpoint dots */}
       {sectionLabels.slice(1).map(({ label, percent }) => (
         <Tooltip key={label} title={label} placement="left">
           <Box
